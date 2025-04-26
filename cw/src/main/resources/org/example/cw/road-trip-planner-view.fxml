@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.cw.RoadTripPlannerController"
+            prefHeight="800.0" prefWidth="1000.0">
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+    </padding>
+    
+    <top>
+        <HBox spacing="10.0" alignment="CENTER_LEFT">
+            <Label text="道路旅行规划器" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+        </HBox>
+    </top>
+    
+    <center>
+        <SplitPane dividerPositions="0.4">
+            <!-- 左侧：输入面板 -->
+            <VBox spacing="10.0">
+                <padding>
+                    <Insets top="10.0" right="10.0" bottom="10.0" left="10.0"/>
+                </padding>
+                
+                <!-- 城市选择面板 -->
+                <VBox spacing="10.0" style="-fx-border-color: #cccccc; -fx-border-radius: 5;">
+                    <padding>
+                        <Insets top="10.0" right="10.0" bottom="10.0" left="10.0"/>
+                    </padding>
+                    
+                    <Label text="城市选择" style="-fx-font-weight: bold;"/>
+                    
+                    <HBox spacing="10.0" alignment="CENTER_LEFT">
+                        <Label text="搜索城市:"/>
+                        <TextField fx:id="searchCityField" promptText="输入城市名或州缩写" HBox.hgrow="ALWAYS"/>
+                    </HBox>
+                    
+                    <HBox spacing="10.0" alignment="CENTER_LEFT">
+                        <Label text="起始城市:"/>
+                        <ComboBox fx:id="startCityComboBox" promptText="选择起始城市" editable="true" HBox.hgrow="ALWAYS"/>
+                    </HBox>
+                    
+                    <HBox spacing="10.0" alignment="CENTER_LEFT">
+                        <Label text="目的地城市:"/>
+                        <ComboBox fx:id="endCityComboBox" promptText="选择目的地城市" editable="true" HBox.hgrow="ALWAYS"/>
+                    </HBox>
+                </VBox>
+                
+                <!-- 景点选择面板 -->
+                <VBox spacing="10.0" style="-fx-border-color: #cccccc; -fx-border-radius: 5;" VBox.vgrow="ALWAYS">
+                    <padding>
+                        <Insets top="10.0" right="10.0" bottom="10.0" left="10.0"/>
+                    </padding>
+                    
+                    <Label text="景点选择" style="-fx-font-weight: bold;"/>
+                    
+                    <HBox spacing="10.0" alignment="CENTER_LEFT">
+                        <Label text="搜索景点:"/>
+                        <TextField fx:id="searchAttractionField" promptText="输入景点名称" HBox.hgrow="ALWAYS"/>
+                    </HBox>
+                    
+                    <HBox spacing="10.0" VBox.vgrow="ALWAYS">
+                        <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                            <Label text="可选景点:"/>
+                            <ListView fx:id="attractionsListView" VBox.vgrow="ALWAYS"/>
+                        </VBox>
+                        
+                        <VBox spacing="10.0" alignment="CENTER">
+                            <padding>
+                                <Insets top="50.0" right="5.0" bottom="5.0" left="5.0"/>
+                            </padding>
+                            <Button text="添加 &gt;" onAction="#addSelectedAttraction"/>
+                            <Button text="&lt; 移除" onAction="#removeSelectedAttraction"/>
+                        </VBox>
+                        
+                        <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                            <Label text="已选景点:"/>
+                            <ListView fx:id="selectedAttractionsListView" VBox.vgrow="ALWAYS"/>
+                        </VBox>
+                    </HBox>
+                </VBox>
+                
+                <!-- 计算按钮 -->
+                <HBox alignment="CENTER">
+                    <Button text="计算最佳路线" onAction="#calculateRoute" prefWidth="150.0"/>
+                </HBox>
+            </VBox>
+            
+            <!-- 右侧：结果和地图面板 -->
+            <VBox spacing="10.0">
+                <padding>
+                    <Insets top="10.0" right="10.0" bottom="10.0" left="10.0"/>
+                </padding>
+                
+                <!-- 结果显示区域 -->
+                <VBox spacing="5.0" style="-fx-border-color: #cccccc; -fx-border-radius: 5;">
+                    <padding>
+                        <Insets top="10.0" right="10.0" bottom="10.0" left="10.0"/>
+                    </padding>
+                    
+                    <Label text="计算结果" style="-fx-font-weight: bold;"/>
+                    <TextArea fx:id="resultTextArea" prefHeight="150.0" editable="false" wrapText="true"/>
+                </VBox>
+                
+                <!-- 地图显示区域 -->
+                <VBox fx:id="mapContainer" style="-fx-border-color: #cccccc; -fx-border-radius: 5;" VBox.vgrow="ALWAYS">
+                    <padding>
+                        <Insets top="10.0" right="10.0" bottom="10.0" left="10.0"/>
+                    </padding>
+                    
+                    <Label text="路线地图" style="-fx-font-weight: bold;"/>
+                </VBox>
+            </VBox>
+        </SplitPane>
+    </center>
+</BorderPane> 
