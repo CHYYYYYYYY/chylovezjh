@@ -121,7 +121,8 @@ public class RoadNetwork {
                             }
                             cityName.append(cityParts[i]);
                         }
-                        cities.put(cityAName, new City(cityName.toString(), state));
+                        City city = new City(cityName.toString(), state);
+                        cities.put(cityAName, city);
                     }
                     
                     if (!cities.containsKey(cityBName)) {
@@ -134,7 +135,8 @@ public class RoadNetwork {
                             }
                             cityName.append(cityParts[i]);
                         }
-                        cities.put(cityBName, new City(cityName.toString(), state));
+                        City city = new City(cityName.toString(), state);
+                        cities.put(cityBName, city);
                     }
                     
                     // 添加连接（双向）
@@ -264,5 +266,22 @@ public class RoadNetwork {
         }
         
         return matches;
+    }
+    
+    /**
+     * 给指定城市设置经纬度坐标
+     */
+    public void setCityCoordinates(String cityName, double latitude, double longitude) {
+        City city = cities.get(cityName);
+        if (city != null) {
+            city.setCoordinates(latitude, longitude);
+        }
+    }
+
+    /**
+     * 获取城市列表，包括其坐标信息
+     */
+    public Collection<City> getCities() {
+        return cities.values();
     }
 } 

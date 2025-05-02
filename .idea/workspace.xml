@@ -1,23 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="6bfaf799-ac52-40d3-9e7c-7966d0b2836a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Attraction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CW3_Data_Files/10000places_random.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CW3_Data_Files/10000places_sorted.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CW3_Data_Files/1000places_random.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CW3_Data_Files/1000places_sorted.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CW3_Data_Files/attractions.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CW3_Data_Files/roads.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/City.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RoadNetwork.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RoadTripPlanner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RoutePlanner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SortingAlgorithmEvaluation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SortingAlgorithmReport.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_sorting_test.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,10 +15,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2wGgmWGDffiHnfdxgxtL77E7VpM" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -42,6 +30,10 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -55,6 +47,7 @@
       <option name="presentableId" value="Default" />
       <updated>1745673484939</updated>
       <workItem from="1745673486508" duration="70000" />
+      <workItem from="1746081338417" duration="1073000" />
     </task>
     <servers />
   </component>

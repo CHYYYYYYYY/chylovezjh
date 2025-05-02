@@ -13,6 +13,8 @@ public class City {
     private Map<City, Integer> connections; // 相邻城市和距离
     private boolean hasAttraction; // 标示该城市是否有景点
     private String attractionName; // 景点名称（如果有）
+    private double latitude; // 城市纬度坐标
+    private double longitude; // 城市经度坐标
 
     public City(String name, String state) {
         this.name = name;
@@ -20,6 +22,18 @@ public class City {
         this.connections = new HashMap<>();
         this.hasAttraction = false;
         this.attractionName = null;
+        this.latitude = Double.NaN; // 默认为NaN表示未设置
+        this.longitude = Double.NaN;
+    }
+    
+    public City(String name, String state, double latitude, double longitude) {
+        this.name = name;
+        this.state = state;
+        this.connections = new HashMap<>();
+        this.hasAttraction = false;
+        this.attractionName = null;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     public String getName() {
@@ -57,6 +71,31 @@ public class City {
     public void setAttractionName(String attractionName) {
         this.attractionName = attractionName;
         this.hasAttraction = (attractionName != null);
+    }
+    
+    public double getLatitude() {
+        return latitude;
+    }
+    
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+    
+    public double getLongitude() {
+        return longitude;
+    }
+    
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+    
+    public void setCoordinates(double latitude, double longitude) {
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
+    
+    public boolean hasCoordinates() {
+        return !Double.isNaN(latitude) && !Double.isNaN(longitude);
     }
 
     @Override
